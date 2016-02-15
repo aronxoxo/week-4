@@ -1,0 +1,84 @@
+#header1{
+  font-size:32px;
+  font-weight: bold;
+}
+
+/*used to be the id for hide filters, deleted after adding bootstrp
+#hide{
+  font-size:18px;
+	height: 20px;
+	width: 110px;
+	border: 2px solid #afafaf;
+	background-color: #ececec;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 5px;
+}
+*/
+
+.header2{
+  font-size:22px;
+  margin: 30px 5px 15px 0px;
+}
+
+#namesearch{
+  height: 40px;
+  width: 300px;
+  border: 1px solid #afafaf;
+  border-radius: 5px;
+}
+/*used to be the id for hide filters, deleted after adding bootstrp
+#gradesearch{
+  height: 40px;
+  width: 100px;
+  font-size: 18px;
+  border: 1px solid #afafaf;
+}
+
+#gradesearchsmaller{
+  height: 40px;
+  width: 15px;
+  border: 1px solid #afafaf;
+  background-color: #5eabfa;
+}
+*/
+#line{
+  margin-top: 15px;
+  margin-bottom: 15px;
+  height: 2px;
+  width: 300px;
+  border: 1px solid #afafaf;
+}
+
+.gap{
+  height: 10px;
+  width: 300px;
+}
+
+.schools{
+  height: 150px;
+  width:300px;
+  background-color: #eeeeee;
+  font-family: sans-serif;
+}
+
+.name{
+  font-size: 22px;
+}
+
+.type{
+  font-size:16px;
+  color:#999999;
+}
+
+.address{
+    font-size: 18px;
+}
+
+.zipcode{
+    font-size: 16px;
+}
+
+#holder{
+  color: white;
+}

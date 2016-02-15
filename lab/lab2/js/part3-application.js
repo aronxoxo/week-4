@@ -23,6 +23,22 @@
   Remember, this is open-ended. Try to see what you can produce.
 ===================== */
 
+/* ===========================My Introduction==============================
+  The filter condition here are shown on the index website: users can set the
+solar installation year, the developer, and decide if detailed information is
+needed as popups (picture, name, and built year)
+  This application is imperfect, because the restMap function isn't defined.
+===================== */
+
+//filters according to the first two conditions, meaning that boolean condition
+//is not included in this one. Boolean condition is used in the plotting function.
+var dataFilter = function(){
+  return _.filter(myData, function(obj){
+    return (obj.YEARBUILT>=numericField1) && (obj.YEARBUILT<=numericField2) && (obj.DEVELOPER === stringField);
+  });
+};
+
+
 /* =====================
   Define a resetMap function to remove markers from the map and clear the array of markers
 ===================== */
@@ -30,6 +46,9 @@ var resetMap = function() {
   /* =====================
     Fill out this function definition
   ===================== */
+  // _.each(filteredData, function(obj){
+  //   map.removeLayer(obj);
+  // });
 };
 
 /* =====================
@@ -41,14 +60,48 @@ var getAndParseData = function() {
   /* =====================
     Fill out this function definition
   ===================== */
+  $.ajax(link).done(function(data) {
+    myData = JSON.parse(data);
+    });
+};
+
+//make markers
+var makeMarkers = function(filteredData) {
+  return _.map(filteredData, function(obj){
+    return L.marker([obj.Y, obj.X]);
+  });
 };
 
 /* =====================
   Call our plotData function. It should plot all the markers that meet our criteria (whatever that
   criteria happens to be — that's entirely up to you)
 ===================== */
+
+//if boolean box is selected, meaning that the user wants to see the detailed
+//info, then popups along with markers will show up. If not, only markers will
+//shown up.
 var plotData = function() {
   /* =====================
     Fill out this function definition
   ===================== */
+  var filteredData = dataFilter();
+  var markers = makeMarkers(filteredData);
+  var option ={
+    'maxWidth': '500',
+    'className' : 'custom'
+    };
+  if(booleanField){
+    _.each(filteredData, function(obj){
+      var img = "<img src=" + obj.THUMB_URL + " width='150px'/><br><b>" + obj.NAME + "</b><br><i>"+ obj.YEARBUILT +"</i>";
+      L.marker([obj.Y, obj.X]).addTo(map).bindPopup(img,option).openPopup();
+    });
+  }
+  else{
+    _.each(markers, function(array){
+      array.addTo(map);
+    });
+  }
 };
+
+//phillySolarInstallationDataUrl
+var link = "https://raw.githubusercontent.com/CPLN690-MUSA610/datasets/master/json/philadelphia-solar-installations.json";

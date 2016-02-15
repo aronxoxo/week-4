@@ -8,6 +8,10 @@
     Edit css/main.css
     ====================== -->
     <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
   </head>
   <body>
 
@@ -42,6 +46,95 @@
 
     <!-- Sidebar -->
     <div class="sidebar">
+
+      <table>
+        <tr>
+          <td id="header1">Filters</td>
+          <td id="holder">thi is a placeholder</td>
+          <!-- Used bootstrap for this button-->
+          <td>
+            <a>
+              <button type="button" class="btn btn-s btn-success">Hide Filters
+              </button>
+            </a>
+          </td>
+        </tr>
+      </table>
+
+      <div class="header2">By Name</div>
+      <div id="namesearch"></div>
+
+      <div class="header2">By Grade</div>
+
+      <!-- Used bootstrap for this button-->
+      <div class="dropdown">
+        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+          All Grades
+            <span class="caret">
+            </span>
+        </button>
+      </div>
+
+      <div id="line"></div>
+
+      <div id="header1">Schools</div>
+      <table>
+        <tr>
+          <td class="schools">
+            <table>
+              <tr class="name">
+                <td>Henry, Charles W.</td>
+              </tr>
+              <tr>
+                <td class="type">Elem/Middle</td>
+              </tr>
+              <tr>
+                <td class="address">601 Carpenter La.</td>
+              </tr>
+              <tr>
+                <td class="zipcode">19119 - 3405</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td class="gap"></td>
+        </tr>
+        <tr>
+          <td class="schools">
+            <table>
+              <tr class="name">
+                <td>Universal Creighton Charter School</td>
+              </tr>
+              <tr>
+                <td class="type">Elem/Middle</td>
+              </tr>
+              <tr>
+                <td class="address">5401 Tabor Ave</td>
+              </tr>
+              <tr>
+                <td class="zipcode">19120 - 3614</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td class="gap"></td>
+        </tr>
+        <tr>
+          <td class="schools">
+            <table>
+              <tr class="name">
+                <td>Marshall, John</td>
+              </tr>
+              <tr>
+                <td class="type">Elementary School</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+
 
       <!-- =====================
       Add HTML!

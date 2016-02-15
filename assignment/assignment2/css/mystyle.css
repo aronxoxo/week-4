@@ -1,0 +1,125 @@
+#toppartoutter{
+  height:350px;
+  background-image: url(https://pixabay.com/get/e034b00728f01c22d2524518a33219c8b66ae3d11cb4154891f9c771/painting-911804_1280.jpg);
+  position: relative;
+}
+#toppartinner{
+  height:350px;
+  opacity:0.75;
+  background-color: #000000;
+  position: relative;
+}
+#middlepart{
+  height:300px;
+  background-color: #ffffff;
+}
+#bottompart{
+  background-color: #f7f7f5;
+  height:200px;
+}
+
+#header{
+  font-family: sans-serif;
+  padding-top: 30px;
+  text-align:center;
+  color:white;
+}
+
+#welcometext{
+  font-family: Calibri Light;
+  text-align:center;
+  font-size: 22px;
+  color:white;
+}
+
+#button_sign{
+  font-family: Calibri Light;
+  font-weight: bold;
+  text-align:center;
+  line-height:45px;
+  font-size: 20px;
+  width:150px;
+  height:50px;
+  margin-left: 50px;
+  border-radius: 5px;
+  background-color: #01c4a4;
+  color:white;
+}
+
+#button_join{
+  font-family: Calibri Light;
+  font-weight: bold;
+  text-align:center;
+  line-height:45px;
+  font-size: 20px;
+  width:150px;
+  height:50px;
+  margin-left:40px;
+  border-radius: 5px;
+  background-color: #ff5347;
+  color:white;
+}
+
+#work{
+  font-family: Gotham, Vito, sans-serif;;
+  text-align:center;
+  margin: 0 0px;
+  color:	#4682B4;
+}
+
+.pic{
+  height: 100px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.steps{
+  font-size: 16px;
+  font-family: Calibri Light;
+  text-align: center;
+  margin:0px 0px 0px 0px;
+  padding-top: 0px;
+}
+
+#bottompic{
+  background-color: #696969;
+  height:200px;
+}
+
+#btmhead{
+  font-size: 24px;
+  font-family: sans;
+  color:#303c3a;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  width:200px;
+  margin-left:180px;
+}
+
+#btmcontent{
+  color:#303c3a;
+  font-family: sans;
+  font-size: 14px;
+  margin-left:180px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  width:200px;
+}
+
+#button_joinnow{
+  font-family: Calibri Light;
+  text-align:center;
+  line-height:20px;
+  font-size: 14px;
+  width:80px;
+  height:20px;
+  margin-left:300px;
+  background-color: #ff5347;
+  color:white;
+}
+
+#bottompic{
+  height:200px;
+  background-image: url(https://pixabay.com/static/uploads/photo/2015/11/20/15/03/colored-pencils-1053282_640.jpg);
+}

@@ -29,11 +29,25 @@
        }
        var one = justOne();
 ===================== */
+var phillySolarInstallationDataUrl = "https://raw.githubusercontent.com/CPLN690-MUSA610/datasets/master/json/philadelphia-solar-installations.json";
 
-var downloadData = $.ajax("");
-var parseData = function() {};
-var makeMarkers = function() {};
-var plotMarkers = function() {};
+var downloadData = $.ajax(phillySolarInstallationDataUrl);
+
+var parseData = function(data) {
+  return JSON.parse(data);
+};
+
+var makeMarkers = function(array) {
+  return _.map(array, function(obj){
+    return L.marker([obj.Y, obj.X]);
+  });
+};
+
+var plotMarkers = function(array1) {
+  _.each(array1, function(array2){
+    array2.addTo(map);
+  });
+};
 
 
 /* =====================
@@ -49,7 +63,11 @@ var plotMarkers = function() {};
   user's input.
 ===================== */
 
-var removeMarkers = function() {};
+var removeMarkers = function(obj1) {
+  _.each(obj1, function(obj2){
+    map.removeLayer(obj2);
+  });
+};
 
 /* =====================
   Optional, stretch goal
@@ -62,12 +80,12 @@ var removeMarkers = function() {};
  CODE EXECUTED DOWN HERE!
 ===================== */
 
-downloadData.done(function(data) {
-  var parsed = parseData(data);
-  var markers = makeMarkers(parsed);
-  plotMarkers(markers);
-  removeMarkers(markers);
-});
+ downloadData.done(function(data) {
+   var parsed = parseData(data);
+   var markers = makeMarkers(parsed);
+   plotMarkers(markers);
+   removeMarkers(markers);
+ });
 
 /* =====================
  Leaflet setup
@@ -75,7 +93,7 @@ downloadData.done(function(data) {
 
 var map = L.map('map', {
   center: [39.9522, -75.1639],
-  zoom: 14
+  zoom: 11
 });
 var Stamen_TonerLite = L.tileLayer('http://stamen-tiles-{s}.a.ssl.fastly.net/toner-lite/{z}/{x}/{y}.{ext}', {
   attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
@@ -84,3 +102,17 @@ var Stamen_TonerLite = L.tileLayer('http://stamen-tiles-{s}.a.ssl.fastly.net/ton
   maxZoom: 20,
   ext: 'png'
 }).addTo(map);
+
+/* =====================
+ stretch goal:
+ plot the stuctures that were built after 2011.
+===================== */
+downloadData.done(function(data) {
+  plotMarkers(makeMarkers(dataFilter(parseData(data))));
+});
+
+var dataFilter = function(array){
+  return _.filter(array, function(obj){
+    return obj.YEARBUILT>=2011
+  });
+};
