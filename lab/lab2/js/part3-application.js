@@ -32,6 +32,8 @@ needed as popups (picture, name, and built year)
 
 //filters according to the first two conditions, meaning that boolean condition
 //is not included in this one. Boolean condition is used in the plotting function.
+var markers=[];
+
 var dataFilter = function(){
   return _.filter(myData, function(obj){
     return (obj.YEARBUILT>=numericField1) && (obj.YEARBUILT<=numericField2) && (obj.DEVELOPER === stringField);
@@ -46,9 +48,10 @@ var resetMap = function() {
   /* =====================
     Fill out this function definition
   ===================== */
-  // _.each(filteredData, function(obj){
-  //   map.removeLayer(obj);
-  // });
+    _.each(markers, function(obj){
+      map.removeLayer(obj);
+    });
+    markers=[];
 };
 
 /* =====================
@@ -85,7 +88,7 @@ var plotData = function() {
     Fill out this function definition
   ===================== */
   var filteredData = dataFilter();
-  var markers = makeMarkers(filteredData);
+  markers = makeMarkers(filteredData);
   var option ={
     'maxWidth': '500',
     'className' : 'custom'
