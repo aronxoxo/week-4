@@ -1,6 +1,6 @@
 #toppartoutter{
   height:350px;
-  background-image: url(https://pixabay.com/get/e034b00728f01c22d2524518a33219c8b66ae3d11cb4154891f9c771/painting-911804_1280.jpg);
+  background-image: url(https://pixabay.com/static/uploads/photo/2015/08/28/11/37/painting-911804_960_720.jpg);
   position: relative;
 }
 #toppartinner{
@@ -121,5 +121,6 @@
 
 #bottompic{
   height:200px;
-  background-image: url(https://pixabay.com/static/uploads/photo/2015/11/20/15/03/colored-pencils-1053282_640.jpg);
+  background-image: url(https://pixabay.com/static/uploads/photo/2015/11/20/15/03/colored-pencils-1053282_960_720.jpg);
+  background-size: 100%;
 }
